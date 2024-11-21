@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion, Gender, and Age Detection</title>
+    <style>
+        /* Apply a background image to the body */
+        body {
+            background-image: url('static/1.png'); /* Replace with the actual image URL */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff; /* Default text color */
+        }
+
+        /* Style for the heading */
+        h1 {
+            color: #ffcc00;
+            font-size: 45px;
+            margin-top: 20px; /* Gold color for the heading */
+            text-shadow: 2px 2px 5px #000; /* Add a shadow for better readability */
+        }
+
+        /* Style for the buttons */
+        button {
+            background-color: #ffa600; /* Blue background */
+            color: white; /* White text */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+        }
+
+        button:hover {
+            background-color: #f09309; /* Darker blue on hover */
+        }
+
+        /* Center the video feed and give it a fixed size */
+        #video_feed {
+            display: none;
+            width: 500px;
+            height: 500px;
+            border: 2px solid #ececec;
+            border-radius: 10px; /* Rounded corners for the video feed */
+        }
+    </style>
+    <script>
+        // Function to open the camera
+        function openCamera() {
+            const videoElement = document.getElementById('video_feed');
+            videoElement.src = "/video_feed";
+            videoElement.style.display = "block";
+        }
+
+        // Function to stop the camera
+        function stopCamera() {
+            const videoElement = document.getElementById('video_feed');
+            videoElement.src = ""; // Stop the video feed
+            videoElement.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Live Emotion, Gender, and Age Detection</h1>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button onclick="openCamera()">Open Camera</button>
+        <button onclick="stopCamera()">Stop Camera</button>
+    </div>
+    <div style="text-align: center;">
+        <center>
+        <img id="video_feed"></center>
+    </div>
+</body>
+</html>
